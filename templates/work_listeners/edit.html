@@ -1,0 +1,28 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id"><p style="color:red"> Уникальное число слушателя которого хотите редактировать:</p></label>
+    <input type="number" id="id" placeholder="Уникальное число" name="id" class="form-control"><br>
+    <label for="id1">Имя слушателя:</label>
+    <input type="text" id="id1" placeholder="Имя слушателя" name="name" class="form-control"><br>
+    <label for="id2">Фамилия:</label>
+    <input type="text" id="id2" placeholder="Фамилия" name="surname" class="form-control"><br>
+    <label for="id3">Отчество:</label>
+    <input type="text" id="id3" placeholder="Отчество" name="father_name" class="form-control"><br>
+    <label for="id4">Год рождения:</label>
+    <input type="date" id="id4" placeholder="Дата рождения" name="year_of_birth" class="form-control"><br>
+    <label for="id5">Фото слушателя:</label>
+    <input type="file" id="id5" placeholder="Фото" name="image"><br>
+    <label for="id6">Телефон:</label>
+    <input type="text" id="id6" placeholder="Номер" name="phone" class="form-control"><br>
+    <label for="id7">Какие курсы прошёл слушатель:</label>
+    <input type="text" id="id7" placeholder="Доп информация" name="сompleted_courses" class="form-control"><br>
+    <input type="submit" class="btn btn-success" value="Сохранить">
+</form>
+    </div>
+{% endblock %}

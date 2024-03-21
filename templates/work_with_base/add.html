@@ -1,0 +1,22 @@
+{% extends 'temp.html' %}
+{% block content %}}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<body>
+<div class="container " >
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id">Уникальное число:</label>
+    <input type="number" placeholder="Число" name="id"  id="id" class="form-control"><br>
+    <label for="id1">Название курса:</label>
+    <input type="text" placeholder="Введите название" name="name_course" id="id1" class="form-control"><br>
+    <label for="id2">Количество часов:</label>
+    <input type="number" placeholder="Кол-во часов" name="quantity" id="id2" class="form-control"><br>
+    <label for="id3">Цена курса:</label>
+    <input type="number" placeholder="Введите цену" name="price" id="id3" class="form-control"><br>
+    <input type="submit" class="btn btn-success" value="Сохранить"><br>
+</form>
+    </div>
+</body>
+{% endblock %}

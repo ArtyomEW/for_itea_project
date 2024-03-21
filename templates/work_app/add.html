@@ -1,0 +1,32 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<body>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+    <label for="id_listeners">Имена слушателей:</label>
+        <select name="listeners" id="id_listeners" required class="form-control">
+            {% for el in listeners %}
+                <option value="{{ el.id }}">{{ el }}</option>
+            {% endfor %}
+        </select><br>
+    <label class="required" for="id_course">Имена курсов:</label>
+    <select name="course" id="id_course" required class="form-control">
+        {% for el in course %}
+            <option value="{{ el.id }}">{{ el }}</option>
+        {% endfor %}
+    </select><br>
+        <label class="required" for="id_">Дать уникальное число:</label>
+        <input type="number" placeholder="Число" name="id" id="id_" class="form-control"><br>
+        <label for="id_week">Желаемые дни недели обучения:</label>
+        <input type="text" placeholder="Дни недели" name="week" id="id_week" required class="form-control"><br>
+        <label for="time_id">Желаемое время обучения:</label><br>
+        <input type="time" placeholder="Время обучения" name="time" id="time_id" required class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="Сохранить">
+    </form>
+</div>
+</body>
+{% endblock %}

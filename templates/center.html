@@ -1,0 +1,35 @@
+{% extends 'temp.html' %}
+{% block content %}
+<body>
+<div class="container alert alert-warning mt-2">
+    <label>Операции над слушателями</label><br>
+    <a class="btn btn-outline-primary" href="{% url 'add_listen' %}">Добавить слушателя</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'edit_listen' %}">Редактировать</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'delete_listen' %}">Удалить или посмотреть список с уникальными числами</a><br>
+</div>
+<div class="container alert alert-warning mt-2">
+    <label>Операции над заявками</label><br>
+    <a class="btn btn-outline-primary" href="{% url 'add_app' %}">Добавить</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'edit_app' %}">Редактировать</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'delete_app' %}">Удалить или посмотреть список с уникальными числами</a><br>
+</div>
+<div class="container alert alert-warning mt-2">
+        <label>Операции над группами</label><br>
+    <a class="btn btn-outline-primary" href="{% url 'add_group' %}">Добавить</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'edit_group' %}">Редактировать</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'delete_group' %}">Удалить или посмотреть список с уникальными числами</a><br>
+</div>
+<div class="container alert alert-warning mt-2">
+    <label>Операции над курсами</label><br>
+    <a class="btn btn-outline-primary" href="{% url 'add_course' %}">Добавить</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'edit_course' %}">Редактировать</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'delete_course' %}">Удалить или посмотреть список с уникальными числами</a><br>
+</div>
+<div class="container alert alert-warning mt-2">
+    <label>Операции над менторами</label><br>
+    <a class="btn btn-outline-primary" href="{% url 'add_mentors' %}">Добавить</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'edit_mentors' %}">Редактировать</a><br>
+    <a class="btn btn-outline-primary" href="{% url 'delete_mentors' %}">Удалить или посмотреть список с уникальными числами</a><br>
+</div>
+</body>
+{% endblock %}

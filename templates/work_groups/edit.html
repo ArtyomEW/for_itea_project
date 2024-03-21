@@ -1,0 +1,38 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<body>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+    <label for="id"><p style="color:red"> Уникальное число группы которого хотите редактировать:</p></label>
+    <input type="number" placeholder="Число" name="id" id="id" class="form-control"><br>
+    <label for="id_mentor">Менторы:</label>
+        <select name="mentor" id="id_mentor" required class="form-control">
+            {% for el in mentors %}
+                <option value="{{ el.id }}">{{ el }}</option>
+            {% endfor %}
+        </select><br>
+    <label class="required" for="id_course">Курсы:</label>
+    <select name="course" id="id_course" required class="form-control">
+        {% for el in course %}
+            <option value="{{ el.id }}">{{ el }}</option>
+        {% endfor %}
+    </select><br>
+        <label class="required" for="id_app">Заявки:</label>
+    <select name="app" id="id_app" required class="form-control">
+        {% for el in app %}
+            <option value="{{ el.id }}">{{ el.name_listeners }}</option>
+        {% endfor %}
+    </select><br>
+        <label for="id_date">Дата запуска:</label>
+        <input type="date" placeholder="Дата" name="date" id="id_date" required class="form-control"><br>
+        <label for="text_id">Дни недели обучения:</label>
+        <input type="text" placeholder="Дни" name="text" id="text_id" required class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="Сохранить">
+    </form>
+</div>
+</body>
+{% endblock %}

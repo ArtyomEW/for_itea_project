@@ -1,0 +1,20 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id"><p style="color:red"> Уникальное число курса которого хотите редактировать:</p></label>>
+    <input type="number" placeholder="Число" name="id_edit" class="form-control" id="id"><br>
+    <label for="id1">Новое название курса:</label>
+    <input type="text" placeholder="Курс" name="name_course" class="form-control" id="id1"><br>
+    <label for="id2">Количество часов:</label>
+    <input type="number" placeholder="Введите кол-во часов" name="quantity" class="form-control" id="id2"><br>
+    <label for="id3">Цена курса:</label>
+    <input type="number" placeholder="Цена" name="price" id="id3"><br>
+    <input type="submit" class="btn btn-success" value="Сохранить">
+</form>
+    </div>
+{% endblock %}

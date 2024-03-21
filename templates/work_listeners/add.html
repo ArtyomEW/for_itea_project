@@ -1,0 +1,30 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<body>
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id">Уникальное число слушателя:</label>
+    <input type="number" placeholder="Число" id="id" name="id" class="form-control"><br>
+    <label for="id2">Имя слушателя:</label>
+    <input type="text" placeholder="Имя" id="id2" name="name" class="form-control"><br>
+    <label for="id3">Фамилия:</label>
+    <input type="text" id="id3" placeholder="Фамилия" name="surname" class="form-control"><br>
+    <label for="id4">Отчество:</label>
+    <input type="text" placeholder="Отчество" id="id4" name="father_name" class="form-control"><br>
+    <label for="id5">Год рождения:</label>
+    <input type="date" id="id5" placeholder="Дата рождения" name="year_of_birth" class="form-control"><br>
+    <label for="id6">Фото слушателя:</label>
+    <input type="file" id="id6" placeholder="Фото" name="image"><br>
+    <label for="id7">Телефон:</label>
+    <input type="text" id="id7" placeholder="Телефон" name="phone" class="form-control"><br>
+    <label for="id8">Какие курсы прошёл слушатель:</label>
+    <input type="text" id="id8" placeholder="Курсы" class="form-control" name="сompleted_courses"><br>
+    <input type="submit" class="btn btn-success" value="Сохранить">
+</form>
+    </div>
+</body>
+{% endblock %}

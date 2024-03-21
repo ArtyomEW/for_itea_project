@@ -1,0 +1,23 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+   {% if course %}
+        {% for el in course %}
+    <div class="alert alert-warning mt-2">
+        <p style="color:red">{{ el.id }}</p>{{ el }}<br>
+    </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас нету записей</p>
+    {% endif %}
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id">Уникальное число ментора:</label>
+<input type="number" placeholder="Ментор" id="id" name="id_delete" class="form-control"><br>
+<input type="submit" class="btn btn-success" value="Удалить">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'temp.html' %}
+{% block content %}
+{% block con %}
+<a сlass="p-2 text-dark" href="{% url  'center' %}">Вернуться назад</a>
+{% endblock %}
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id"><p style="color:red"> Уникальное число ментора которого хотите редактировать:</p></label>
+    <input type="number" id="id" placeholder="Введите id ментора" name="id" class="form-control"><br>
+    <label for="id1">Имя ментора:</label>
+    <input type="text" id="id1" placeholder="Имя" name="name" class="form-control"><br>
+    <label for="id2">Фамилия:</label>
+    <input type="text" id="id2" placeholder="Фамилия" name="surname" class="form-control"><br>
+    <label for="id3">Уникальное число ментора:</label>
+    <input type="text" id="id3" placeholder="Отчество" name="father_name" class="form-control"><br>
+    <label for="id4">Фото ментора:</label>
+    <input type="file" placeholder="Фото" id="id4" name="image" ><br>
+    <label for="id5">Год рождения:</label>
+    <input type="date" id="id5" placeholder="Дата рождения" name="year_of_birth" class="form-control"><br>
+    <label for="id6">Квалификация:</label>
+    <input type="text" id="id6" placeholder="Квалификация" name="qualification" class="form-control"><br>
+    <label for="id7">Доп-ая информация:</label>
+    <input type="text" id="id7" placeholder="Доп информация" name="additional_information" class="form-control"><br>
+    <input type="submit"  class="btn btn-success" value="Сохранить">
+</form>
+    </div>
+{% endblock %}
